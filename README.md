@@ -1,1 +1,2 @@
 # java-Bank-class
+I am currently working on a simple project that involves creating a Bank class. This project is a part of my journey as I aspire to advance my skills and become a Salesforce Mid-level Developer. Through this endeavor, I am gaining hands-on experience and enhancing my understanding of programming concepts, which I believe will contribute to my growth in the Salesforce development domain.
