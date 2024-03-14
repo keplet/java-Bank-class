@@ -1,25 +1,32 @@
+/*
+ * @Author Keplet Saintil
+ * Date: 13/03/2024
+ * @Description: This is a project I started working on for my Java learning path.
+ */
+//import the java.time.format package
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;  
 public class BankAccount extends Bank{
+  //get the current transaction time
   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
   LocalDateTime now = LocalDateTime.now();
-
-          String accountName;
+  //Instantiating the fields
+          String accountOwner;
   private double balance;
   private int accountId;
   private int accountNumber;
   //this is the constructor
-public  BankAccount(String name, String location, int code,String accountName, int balance, int accountId, int accountNumber){
+public  BankAccount(String name, String location, int code,String accountOwner, int balance, int accountId, int accountNumber){
   //calling the super constructor
   super(name, location,code);
-  this.accountName = accountName;
+  this.accountOwner = accountOwner;
   this.balance = balance;
   this.accountId = accountId;
   this.accountNumber = accountNumber;
 }
 //Account details using toString() method
 public String toString(){
-  return "\n" +"Account Owner: " + this.accountName.toUpperCase() +"\n"+ "Actual balance: " 
+  return "\n" +"Account Owner: " + this.accountOwner.toUpperCase() +"\n"+ "Actual balance: " 
   + this.balance +"$\n" +"Account Id: " + this.accountId +
   "\n"+"Number: " + this.accountNumber+"\nBank Name: "+this.name +"\nLocation: "+this.location;
 };
@@ -34,22 +41,14 @@ public void deposit(double amount){
 } 
 //this is the withdraw method
 public void withdraw(double amountToWithdraw){
-  /*if(amountToWithdraw > this.balance){
-    System.out.println("You don't have this amount available");
-  } else{
-      System.out.println("You withdrew an amount of " +amountToWithdraw +"$" +"from your account on "+dtf.format(now));
-  this.balance -=amountToWithdraw;
-  System.out.println("your actual balance is "+this.balance+"$");
-  }*/
   //Using ternary operator to simplify code
-  /*String message = amountToWithdraw > this.balance
-            ? "Insufficient balance "  
-            : "Your actual balance is " + (this.balance-= amountToWithdraw) + "$";
-            System.out.println(message);*/
             System.out.println(amountToWithdraw > this.balance
         ? "You don't have this amount available"
         : "You withdrew an amount of " + amountToWithdraw + "$ from your account on "+ dtf.format(now) +"\n"+
           "Your actual balance is " + (this.balance -= amountToWithdraw) + "$");
-
+}
+//check account details
+public void checkDetails(){
+  System.out.println(toString());
 }
 }
