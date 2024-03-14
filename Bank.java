@@ -1,3 +1,8 @@
+/*
+ * @Author Keplet Saintil
+ * Date: 13/03/2024
+ * @Description: This is a project I started working on for my Java learning path.
+ */
 public class Bank {
     //Fields
     protected String     name;
