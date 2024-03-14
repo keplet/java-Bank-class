@@ -11,7 +11,7 @@ public class BankAccount extends Bank{
   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
   LocalDateTime now = LocalDateTime.now();
   //Instantiating the fields
-          String accountOwner;
+  private String accountOwner;
   private double balance;
   private int accountId;
   private int accountNumber;
